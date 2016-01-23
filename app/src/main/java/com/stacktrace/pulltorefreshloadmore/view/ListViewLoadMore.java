@@ -15,8 +15,8 @@ import com.stacktrace.pulltorefreshloadmore.R;
 public class ListViewLoadMore extends ListView implements AbsListView.OnScrollListener {
 
     View footView;
-    int lastItem; // 最后一项
-    int totalItemCount; // 此刻一共有多少项
+    int lastItem; 
+    int totalItemCount; 
     boolean isLoading=false;
     IsLoadingListener isLoadingListener;
 
@@ -35,11 +35,7 @@ public class ListViewLoadMore extends ListView implements AbsListView.OnScrollLi
         initView(context);
     }
 
-    /**
-     * 初始化footView
-     *
-     * @param context
-     */
+    
     void initView(Context context) {
         LayoutInflater inflater = LayoutInflater.from(context);
         footView = inflater.inflate(R.layout.foot_layout, null);
@@ -75,7 +71,7 @@ public class ListViewLoadMore extends ListView implements AbsListView.OnScrollLi
         public void onLoad();
     }
 
-    public void complateLoad(){
+    public void loadCompleted(){
         isLoading=false;
         footView.findViewById(R.id.foot_layout).setVisibility(View.GONE);
     }

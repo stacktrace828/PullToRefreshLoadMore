@@ -30,29 +30,12 @@ public class MainActivity extends Activity implements IsLoadingListener{
         listView.setOnLoadingListener(this);
     }
 
-    /**
-     * 初始化list值
-     */
     private void initData() {
         list = new ArrayList<String>();
 
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
-        list.add("123456789");
+        for (int i = 0; i < 20; i++) {
+            list.add("item " + i);
+        }
     }
 
     @Override
@@ -66,7 +49,7 @@ public class MainActivity extends Activity implements IsLoadingListener{
                     list.add("new item" + i);
                 }
                 adapter.notifyDataSetChanged();
-                listView.complateLoad();
+                listView.loadCompleted();
             }
         }, 2000);
 
